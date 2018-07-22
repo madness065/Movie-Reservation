@@ -25,6 +25,11 @@ public class ShowProfileUserActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AllUserActivity.class);
         startActivity(intent);
     }
+    public void gotoEditProfileUser(View v)
+    {
+        Intent intent = new Intent (this, EditProfileUserActivity.class);
+        startActivity(intent);
+    }
     public void FindTextViewshit()
     {
         TVFullname = (TextView) findViewById(R.id.textViewFullName);
