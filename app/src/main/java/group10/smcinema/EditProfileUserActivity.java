@@ -9,6 +9,7 @@ import android.widget.EditText;
 public class EditProfileUserActivity extends AppCompatActivity {
 
     EditText editFullname,editAddress,editPhone,editPassword;
+    String fullname,address,phonenumber,password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,7 @@ public class EditProfileUserActivity extends AppCompatActivity {
     {
         gobacktoShowProfileUser();
         // code or method for updating data
+
     }
     public void gobacktoShowProfileUser()
     {
@@ -34,5 +36,11 @@ public class EditProfileUserActivity extends AppCompatActivity {
         editPhone = (EditText) findViewById(R.id.editTextPhone);
         editPassword = (EditText) findViewById(R.id.editTextPassword);
     }
-
+    public void getEditText()
+    {
+        fullname = editFullname.getText().toString();
+        address = editAddress.getText().toString();
+        phonenumber = editPhone.getText().toString();
+        password = editPassword.getText().toString();
+    }
 }

@@ -31,6 +31,12 @@ public class User {
     public String getPhoneNumber() {
         return PhoneNumber;
     }
+    public String getUsername(){return  Username;}
+    public String getPassword(){return Password;}
+    public int getUserID()
+    {
+        return UserID;
+    }
     public void setFullname(String fullname) {
         Fullname = fullname;
     }

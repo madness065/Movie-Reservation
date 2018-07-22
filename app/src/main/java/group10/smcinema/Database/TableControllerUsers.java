@@ -4,6 +4,8 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.os.strictmode.SqliteObjectLeakedViolation;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -53,6 +55,7 @@ public class TableControllerUsers extends DatabaseHandler {
                 user.Fullname = cursor.getString(cursor.getColumnIndex("Fullname"));
                 user.Address = cursor.getString(cursor.getColumnIndex("Address"));
                 user.Password = cursor.getString(cursor.getColumnIndex("Password"));
+                user.PhoneNumber = cursor.getString(cursor.getColumnIndex("PhoneNumber"));
 
             } while (cursor.moveToNext());
         }
@@ -61,5 +64,16 @@ public class TableControllerUsers extends DatabaseHandler {
         db.close();
 
         return user;
+    }
+
+    public int updateUser(User user)
+    {
+        SQLiteDatabase db =this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put("username", user.getUsername());
+        cv.put("password", user.getPassword());
+
+        return db.update("users", cv, "id" + "= ?", new String[]{String.valueOf(user.getUserID())});
     }
 }

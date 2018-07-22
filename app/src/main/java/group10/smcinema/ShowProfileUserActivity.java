@@ -38,7 +38,7 @@ public class ShowProfileUserActivity extends AppCompatActivity {
     }
     public void setTexttoAll()
     {
-        User user = new User();
+        User user = AllUserActivity.user;
         TVFullname.setText(user.getFullname());
         TVAddress.setText(user.getAddress());
         TVPhone.setText(user.getPhoneNumber());

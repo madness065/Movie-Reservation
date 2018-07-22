@@ -36,9 +36,10 @@ public class MainActivity extends AppCompatActivity {
             User user = new TableControllerUsers(this).read(UsernameField.getText().toString());
 
             if(user.Password.equals(PasswordField.getText().toString())){
+                AllUserActivity.user = user;
                 Toast.makeText(this,"User " + user.Fullname + " has logged in successfully",Toast.LENGTH_LONG).show();
                 gotoAllUser();
-                user.setFullname(user.Fullname);
+                user.setFullname(user.Fullname); //nothing actually; testing and stuff :D
             }
             else
                 Toast.makeText(this,"Wrong Password",Toast.LENGTH_LONG).show();
