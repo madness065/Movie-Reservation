@@ -71,9 +71,12 @@ public class TableControllerUsers extends DatabaseHandler {
         SQLiteDatabase db =this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
-        cv.put("username", user.getUsername());
-        cv.put("password", user.getPassword());
+        cv.put("Username", user.getUsername());
+        cv.put("Password", user.getPassword());
+        cv.put("Fullname", user.getFullname());
+        cv.put("Address", user.getAddress());
+        cv.put("PhoneNumber", user.getPhoneNumber());
 
-        return db.update("users", cv, "id" + "= ?", new String[]{String.valueOf(user.getUserID())});
+        return db.update("users", cv, "Username" + "= ?", new String[]{String.valueOf(user.getUsername())});
     }
 }

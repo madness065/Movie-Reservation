@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import group10.smcinema.Database.TableControllerUsers;
+import group10.smcinema.Objects.User;
+
 public class EditProfileUserActivity extends AppCompatActivity {
 
     EditText editFullname,editAddress,editPhone,editPassword;
@@ -20,8 +23,16 @@ public class EditProfileUserActivity extends AppCompatActivity {
 
     public void editButton(View v)
     {
+        getEditText();
+        User user = new User();
+        user.setFullname(fullname);
+        user.setAddress(address);
+        user.setPassword(password);
+        user.setPhoneNumber(phonenumber);
+
+        AllUserActivity.user = user;
+        new TableControllerUsers(this).updateUser(user);
         gobacktoShowProfileUser();
-        // code or method for updating data
 
     }
     public void gobacktoShowProfileUser()

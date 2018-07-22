@@ -13,6 +13,7 @@ import group10.smcinema.Objects.User;
 public class MainActivity extends AppCompatActivity {
 
     EditText UsernameField, PasswordField;
+    String admin = "admin";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +40,11 @@ public class MainActivity extends AppCompatActivity {
                 AllUserActivity.user = user;
                 Toast.makeText(this,"User " + user.Fullname + " has logged in successfully",Toast.LENGTH_LONG).show();
                 gotoAllUser();
-                user.setFullname(user.Fullname); //nothing actually; testing and stuff :D
             }
+            else if(admin.equals(PasswordField.getText().toString()) && admin.equals(UsernameField.getText().toString()))
+        {
+            //Too bored to make ADMIN in DATABASE (Testing ONLY)
+        }
             else
                 Toast.makeText(this,"Wrong Password",Toast.LENGTH_LONG).show();
         }

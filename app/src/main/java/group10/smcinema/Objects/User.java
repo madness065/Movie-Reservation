@@ -40,4 +40,8 @@ public class User {
     public void setFullname(String fullname) {
         Fullname = fullname;
     }
+    public void setPassword(String password) {Password = password; }
+    public void setAddress(String address) {Address = address; }
+    public void setPhoneNumber(String phoneNumber) {PhoneNumber = phoneNumber; }
+    public void setUserID(int userID){UserID = userID; }
 }
